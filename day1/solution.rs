@@ -6,6 +6,13 @@ fn main() -> std::io::Result<()> {
 	let mut contents = String::new();
 	file.read_to_string(&mut contents)?;
 	println!("Here are the file contents:");
-	println!("{}", contents);
+	//println!("{}", contents);
+
+	let split = contents.split("\n");
+
+	for s in split {
+		println!("Line: {}", s);
+	}
+
 	Ok(())
 }
