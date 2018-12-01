@@ -10,8 +10,16 @@ fn main() -> std::io::Result<()> {
 
 	let split = contents.split("\n");
 
+	// let sum = 0;
+
 	for s in split {
 		println!("Line: {}", s);
+
+		if s.starts_with("+") {
+			println!("plus");
+		} else if s.starts_with("-") {
+			println!("minus");
+		}
 	}
 
 	Ok(())
