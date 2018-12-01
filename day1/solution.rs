@@ -10,7 +10,7 @@ fn main() -> std::io::Result<()> {
 
 	let split = contents.split("\n");
 
-	// let sum = 0;
+	let mut sum : i32 = 0;
 
 	for s in split {
 		println!("Line: {}", s);
@@ -20,7 +20,11 @@ fn main() -> std::io::Result<()> {
 		} else if s.starts_with("-") {
 			println!("minus");
 		}
+
+		sum += s.parse::<i32>().unwrap_or(0);
 	}
+
+	println!("Sum: {}", sum);
 
 	Ok(())
 }
